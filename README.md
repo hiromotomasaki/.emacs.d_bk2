@@ -22,8 +22,9 @@ cd ~/local/emacs-24.5
 チェックGOOD  
 ~/local/emacsを作成して  
 ./configure --prefix=$HOME/local/emacs  
-チェックBAD
+チェックBAD  
 エラー箇所をググって解決
+
 私の場合は
 
 configure: error: You seem to be running X, but no X development libraries
@@ -35,11 +36,11 @@ If you are sure you want Emacs compiled without X window support, pass
  --without-x
 to configure.
 
-と出た。
-sudo apt install libgtk2.0-dev libtiff5-dev libgif-dev libjpeg-dev libpng12-dev libxpm-dev libncurses-dev
+と出た。  
+sudo apt install libgtk2.0-dev libtiff5-dev libgif-dev libjpeg-dev libpng12-dev libxpm-dev libncurses-dev  
 として無事./configureが通った。 
 
-その後
+その後  
 make -j4  
 make install -j4  
 で  
@@ -62,7 +63,7 @@ githubでリポジトリを作成
 git remote add origin https://github.com/hiromotomasaki/.emacs.d.git  
 git push -u origin master
 
-以後、更新は
-git add .
-git commit -m 'commit'
-git push
+以後、更新は  
+git add .  
+git commit -m 'commit'  
+git push  
