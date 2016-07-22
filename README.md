@@ -51,6 +51,19 @@ alias設定をする（alias emacs = ~/local/emacs/bin）
 emacsの起動  
 GUIの場合 emacs  
 ターミナルの場合 emacs -nw  
+emacsのバージョンの確認
+emacs --version
+
+日本語マニュアル
+https://ayatakesi.github.io/emacs/24.5/emacs.html  
+
+GNU Emacs 24.5.1  
+Copyright (C) 2015 Free Software Foundation, Inc.  
+GNU Emacs comes with ABSOLUTELY NO WARRANTY.  
+You may redistribute copies of Emacs  
+under the terms of the GNU General Public License.  
+For more information about these matters, see the file named COPYING.  
+
 
 # emacsの設定
 emacsと打つと~/.emacs.dが作成される。  
@@ -67,3 +80,27 @@ git push -u origin master
 git add .  
 git commit -m 'commit'  
 git push  
+
+## init.elの作成
+参考 : http://tarao.hatenablog.com/entry/20150221/1424518030  
+参考 : http://biwakonbu.com/?p=555  
+## el-getの導入(パッケージ管理)
+init.elの先頭に
+
+;; load-path で ~/.emacs.d と書かなくてよくなる  
+(when load-file-name  
+  (setq user-emacs-directory (file-name-directory load-file-name)))  
+
+;; el-getの設定(El-Getがインストールされていればそれを有効化し, そうでなければGitHubからダウンロードしてインストールする)  
+(add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))  
+(unless (require 'el-get nil 'noerror)  
+  (with-current-buffer  
+      (url-retrieve-synchronously  
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")  
+    (goto-char (point-max))  
+    (eval-print-last-sexp)))  
+
+と書く。
+
+## init-loaderの導入
+
