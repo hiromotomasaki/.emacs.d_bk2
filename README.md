@@ -153,8 +153,8 @@ drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 11:14 init/  (init-loa
 drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 10:50 init-loader/  (init/内のファイルににシンボリックリンクを貼り、ナンバリングしたもの)
 -rw-rw-r--  1 masakihiromoto masakihiromoto 1781  7月 23 11:02 init.el  (ファイル読み込み先、el-get、init-loaderなどの設定)
 drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 11:13 others/  
-drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 11:13 recipes/  (http://ja.stackoverflow.com/questions/2157/emacs%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E7%AE%A1%E7%90%86%E3%81%AE%E8%89%AF%E3%81%84%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6, https://github.com/tarao/dotfiles/blob/master/.emacs.d/recipes/auctex.rcp 参照)
-drwxrwxr-x  3 masakihiromoto masakihiromoto 4096  7月 23 10:49 v24.5.3/  (el-getでinstallされたファイルの保存先)
+drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 11:13 recipes/  (http://ja.stackoverflow.com/questions/2157/emacs%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E7%AE%A1%E7%90%86%E3%81%AE%E8%89%AF%E3%81%84%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6, https://github.com/tarao/dotfiles/blob/master/.emacs.d/recipes/auctex.rcp 参照)  
+drwxrwxr-x  3 masakihiromoto masakihiromoto 4096  7月 23 10:49 v24.5.3/  (el-getでinstallされたファイルの保存先)  
 
 のようになった。
 
@@ -184,3 +184,4 @@ drwxrwxr-x  3 masakihiromoto masakihiromoto 4096  7月 23 10:49 v24.5.3/  (el-ge
   
 20 directories  
 
+## init-loaderを用いたemacsの基本設定
