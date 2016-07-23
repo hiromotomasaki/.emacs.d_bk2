@@ -1,0 +1,6 @@
+(setq el-get-lock-package-versions
+      '((with-eval-after-load-feature :checksum "0b38651a5f0dafdfe04bd0032eb5ff803e99460b")
+        (el-get-lock :checksum "df8cfe55441695865a64b97946750b6413a40425")))
+(setq el-get-lock-locked-packages 'nil)
+(setq el-get-lock-unlocked-packages
+      '(el-get))

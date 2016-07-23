@@ -68,8 +68,9 @@ For more information about these matters, see the file named COPYING.
 # emacsの設定
 emacsと打つと~/.emacs.dが作成される。  
 cd ~/.emacs.d
-touch README.md  
-git init  
+touch README.md
+touch .gitignore  
+git init
 git add .  
 git commit -m 'commit'  
 githubでリポジトリを作成  
@@ -82,25 +83,62 @@ git commit -m 'commit'
 git push  
 
 ## init.elの作成
-参考 : http://tarao.hatenablog.com/entry/20150221/1424518030  
-参考 : http://biwakonbu.com/?p=555  
-## el-getの導入(パッケージ管理)
-init.elの先頭に
+参考 : http://tarao.hatenablog.com/entry/20150221/1424518030
 
-;; load-path で ~/.emacs.d と書かなくてよくなる  
+cd ~/.emacs.d
+内部でシンボリックリンクが貼られたファイルを格納するフォルダ  
+mkdir init-loader  
+実際のinitファイル群が格納されているフォルダ  
+mkdir init  
+自分で定義したレシピが格納されているフォルダ  
+mkdir recipes  
+insertするテンプレートファイルが格納されているフォルダ
+mkdir others  
+その他  
+
+;; emacs directory  
 (when load-file-name  
   (setq user-emacs-directory (file-name-directory load-file-name)))  
 
-;; el-getの設定(El-Getがインストールされていればそれを有効化し, そうでなければGitHubからダウンロードしてインストールする)  
-(add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))  
-(unless (require 'el-get nil 'noerror)  
+(let ((versioned-dir (locate-user-emacs-file (format "v%s" emacs-version))))  
+  (setq-default el-get-dir (expand-file-name "el-get" versioned-dir)  
+                package-user-dir (expand-file-name "elpa" versioned-dir)))  
+
+;; bundle (an El-Get wrapper)  
+(setq-default el-get-emacswiki-base-url  
+              "http://raw.github.com/emacsmirror/emacswiki.org/master/")  
+(add-to-list 'load-path (expand-file-name "bundle" el-get-dir))  
+(unless (require 'bundle nil 'noerror)  
   (with-current-buffer  
       (url-retrieve-synchronously  
-       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")  
+       "http://raw.github.com/tarao/bundle-el/master/bundle-install.el")  
     (goto-char (point-max))  
     (eval-print-last-sexp)))  
+(add-to-list 'el-get-recipe-path (locate-user-emacs-file "recipes"))  
 
-と書く。
+;; lock the pacakge versions  
+(bundle tarao/el-get-lock  
+  (el-get-lock)  
+  (el-get-lock-unlock 'el-get))  
 
-## init-loaderの導入
+(bundle with-eval-after-load-feature)  
 
+;; load init files  
+(bundle! emacs-jp/init-loader  
+  ;; load  
+  (setq-default init-loader-show-log-after-init nil  
+                init-loader-byte-compile t)  
+  (init-loader-load (locate-user-emacs-file "init-loader"))  
+
+  ;; hide compilation results  
+  (let ((win (get-buffer-window "*Compile-Log*")))  
+    (when win (delete-window win))))  
+
+;; put site-lisp and its subdirectories into load-path  
+(when (fboundp 'normal-top-level-add-subdirs-to-load-path)  
+  (let* ((dir (locate-user-emacs-file "site-lisp"))  
+         (default-directory dir))  
+    (when (file-directory-p dir)  
+      (add-to-list 'load-path dir)  
+      (normal-top-level-add-subdirs-to-load-path))))  
+      
