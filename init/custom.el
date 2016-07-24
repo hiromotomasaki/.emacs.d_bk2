@@ -68,6 +68,12 @@
 ;; モードラインに列番号表示
 (column-number-mode 1)			;表示する
 ;; (column-number-mode 0)			;表示しない
+
+;; Toggle buffer size display in the mode line (Size Indication mode).
+;; fileのサイズを表示する
+(size-indication-mode 1)		;表示する
+;; (size-indication-mode 0)		;表示しない
+
 ;; *************************************************** ;;
 
 ;; ******** Emacs/Convenience/Linum group ******** ;;
@@ -152,5 +158,18 @@
 
 (setq inhibit-startup-screen t)		;初期windowで*GNY Emacs*を非表示にする
 ;; (setq inhibit-startup-screen nil)		;初期windowで*GNY Emacs*を表示する
+
+;; スクロールバーの表示
+(set-scroll-bar-mode nil)		;非表示
+;; (set-scroll-bar-mode t)			;表示
+
+;; タイトルバーへの情報表示
+;; %%b : バッファー名(ファイル名)
+;; %%f : フルパス
+;; invocation-name : 起動したEmacsのプログラム名
+;; emacs-version : emacsのバージョン名
+;; system-name : マシン名(ホスト名)
+(setq frame-title-format (format "%%b - %%f - %s-%s@%s" invocation-name emacs-version system-name))
 ;; *************************************************************** ;;
+
 
