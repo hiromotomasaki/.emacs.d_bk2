@@ -92,7 +92,7 @@ mkdir init-loader
 mkdir init  
 自分で定義したレシピが格納されているフォルダ  
 mkdir recipes  
-insertするテンプレートファイルが格納されているフォルダ
+insertするテンプレートファイルが格納されているフォルダ  
 mkdir others  
 その他  
 
@@ -143,15 +143,16 @@ mkdir others
       (normal-top-level-add-subdirs-to-load-path))))  
 
 ## ここまでのまとめ
-.emacs.d内のファイルやディレクトリは  
+.emacs.d内のファイルやディレクトリは
+
 drwxrwxr-x  8 masakihiromoto masakihiromoto 4096  7月 23 11:41 .git/  (git関係)  
 -rw-rw-r--  1 masakihiromoto masakihiromoto  670  7月 23 11:39 .gitignore  (githubに上げないファイル、ディレクトリの設定)  
 -rw-rw-r--  1 masakihiromoto masakihiromoto 5314  7月 23 11:53 README.md  (gitのページで下部に出てくる説明)  
 drwx------  2 masakihiromoto masakihiromoto 4096  7月 23 11:53 auto-save-list/  (emacsの自動保存)  
 -rw-rw-r--  1 masakihiromoto masakihiromoto  297  7月 23 11:52 el-get.lock  (installしたパッケージのバージョン固定)  
 drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 11:14 init/  (init-loaderで読み込まれる設定ファイル群の管理ディレクトリ)  
-drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 10:50 init-loader/  (init/内のファイルににシンボリックリンクを貼り、ナンバリングしたもの)
--rw-rw-r--  1 masakihiromoto masakihiromoto 1781  7月 23 11:02 init.el  (ファイル読み込み先、el-get、init-loaderなどの設定)
+drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 10:50 init-loader/  (init/内のファイルににシンボリックリンクを貼り、ナンバリングしたもの)  
+-rw-rw-r--  1 masakihiromoto masakihiromoto 1781  7月 23 11:02 init.el  (ファイル読み込み先、el-get、init-loaderなどの設定)  
 drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 11:13 others/  
 drwxrwxr-x  2 masakihiromoto masakihiromoto 4096  7月 23 11:13 recipes/  (http://ja.stackoverflow.com/questions/2157/emacs%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E7%AE%A1%E7%90%86%E3%81%AE%E8%89%AF%E3%81%84%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6, https://github.com/tarao/dotfiles/blob/master/.emacs.d/recipes/auctex.rcp 参照)  
 drwxrwxr-x  3 masakihiromoto masakihiromoto 4096  7月 23 10:49 v24.5.3/  (el-getでinstallされたファイルの保存先)  

@@ -1,6 +1,12 @@
 ;; 参考 : http://tarao.hatenablog.com/entry/20150221/1424518030
 ;; 参考(生) : https://github.com/tarao/dotfiles/blob/master/.emacs.d/init.el
 
+;; ルール
+;; 00 : 基本的な設定
+;; 50 : ファイル依存
+;; 99 : キーバインドの設定
+;; 01~49, 51~98 : その他
+
 ;; emacs directory
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
@@ -31,7 +37,7 @@
 ;; load init files
 (bundle! emacs-jp/init-loader
   ;; load
-  (setq-default init-loader-show-log-after-init nil
+  (setq-default init-loader-show-log-after-init t
                 init-loader-byte-compile t)
   (init-loader-load (locate-user-emacs-file "init-loader"))
 
