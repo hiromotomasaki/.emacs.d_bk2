@@ -15,6 +15,7 @@
   (setq-default el-get-dir (expand-file-name "el-get" versioned-dir)
                 package-user-dir (expand-file-name "elpa" versioned-dir)))
 
+;; **************** el-get ****************  ;;
 ;; bundle (an El-Get wrapper)
 (setq-default el-get-emacswiki-base-url
               "http://raw.github.com/emacsmirror/emacswiki.org/master/")
@@ -27,6 +28,7 @@
     (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path (locate-user-emacs-file "recipes"))
 
+;; **************** el-get-lock ****************  ;;
 ;; lock the pacakge versions
 (bundle tarao/el-get-lock
   (el-get-lock)
@@ -34,6 +36,17 @@
 
 (bundle with-eval-after-load-feature)
 
+;; **************** use-package ****************  ;;
+;; use-packageを使えるようにする
+(bundle jwiegley/use-package)
+(bundle myrjola/diminish.el)
+(eval-when-compile (require 'use-package))
+(require 'diminish)    ;; if you use :diminish
+(require 'bind-key)    ;; if you use any :bind variant
+(setq use-package-verbose t)
+(setq use-package-minimum-reported-time 0.001)
+
+;; **************** init-loader ****************  ;;
 ;; load init files
 (bundle! emacs-jp/init-loader
   ;; load
@@ -52,4 +65,5 @@
     (when (file-directory-p dir)
       (add-to-list 'load-path dir)
       (normal-top-level-add-subdirs-to-load-path))))
+
 

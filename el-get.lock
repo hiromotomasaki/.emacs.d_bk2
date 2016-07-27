@@ -1,5 +1,11 @@
 (setq el-get-lock-package-versions
-      '((with-eval-after-load-feature :checksum "0b38651a5f0dafdfe04bd0032eb5ff803e99460b")
+      '((popwin :checksum "95dea14c60019d6cccf9a3b33e0dec4e1f22c304")
+        (init-loader :checksum "287da99eadfa3dd85492506db43d68324069b593")
+        (use-package :checksum "c191614a009bf02d7af63e306bab6d296e1849e3")
+        (undo-tree :checksum "a3e81b682053a81e082139300ef0a913a7a610a2")
+        (diminish\.el :checksum "826e19186bef91d2241739cb8b48b8cfba14c17a")
+        (google-translate :checksum "50d3b9e00c3b7d2e66970b63cc7379b5fa4afb19")
+        (with-eval-after-load-feature :checksum "0b38651a5f0dafdfe04bd0032eb5ff803e99460b")
         (el-get-lock :checksum "df8cfe55441695865a64b97946750b6413a40425")))
 (setq el-get-lock-locked-packages 'nil)
 (setq el-get-lock-unlocked-packages
