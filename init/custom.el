@@ -169,32 +169,7 @@
 ;; invocation-name : 起動したEmacsのプログラム名
 ;; emacs-version : emacsのバージョン名
 ;; system-name : マシン名(ホスト名)
-;; (setq frame-title-format (format "%%b - %%f - %s-%s@%s" invocation-name emacs-version system-name))
-(setq frame-title-format '("" invocation-name "-" emacs-version "@" short-hostname ": %b"))
-
-;;リージョン内の行数と文字数をモードラインに表示する
-;; http://d.hatena.ne.jp/sonota88/20110224/1298557375
-(defun count-lines-and-chars ()
-  (if mark-active
-      (format "%d lines,%d chars "
-              (count-lines (region-beginning) (region-end))
-              (- (region-end) (region-beginning)))
-    ""))
-
-(add-to-list 'default-mode-line-format
-             '(:eval (count-lines-and-chars)))
-
-;; タブ文字の表示幅
-(setq-default tab-width 4)
-
-
-
-
-
-
-
-
-
+(setq frame-title-format (format "%%b - %%f - %s-%s@%s" invocation-name emacs-version system-name))
 
 
 
