@@ -164,7 +164,37 @@
 (setq-default show-trailing-whitespace t)
 (add-hook 'comint-mode-hook #'(lambda() (setq show-trailing-whitespace nil)))
 
+;; ;; 編集行をハイライト
+;; (global-hl-line-mode)
+
 ;; parenthesis
-(show-paren-mode t)
+(show-paren-mode 1)
+(defvar show-paren-delay 0)		;setqだけだとwarningが出る
+(defvar show-paren-style 'expression)	;setqだけだとwarningが出る
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
+
+(set-face-attribute 'show-paren-match-face nil
+		    :background user-default-bg
+                    :underline "#ffff00")
+
+
+;; (show-paren-mode 1)
+;; (defvar show-paren-delay 0)
+;; (defvar show-paren-style 'mixed)
+;; ;; (use-package paren 
+;; ;;    :init (show-paren-mode) 
+;; ;;    :config (setq show-paren-when-point-inside-paren nil 
+;; ;;                  show-paren-when-point-in-periphery t)) 
+
+
+
+
+;; (show-paren-mode 1)
+;; (defvar show-paren-delay 0)
+;; (defvar show-paren-style 'mixed)
+;; ;; (set-face-attribute 'show-paren-match-face nil
+;; ;;                     :background nil :foreground nil
+;; ;;                     :underline "#ffff00" :weight 'extra-bold)
 
 

@@ -1,5 +1,7 @@
 (setq el-get-lock-package-versions
-      '((tarao-elisp :checksum "b9f6a7c1002248ce0f6a56bc720dafb5b77437be")
+      '((emacs-codic :checksum "52bbb6997ef4ab9fb7fea43bbfff7f04671aa557")
+        (search-web\.el :checksum "c4ae86ac1acfc572b81f3d78764bd9a54034c331")
+        (tarao-elisp :checksum "b9f6a7c1002248ce0f6a56bc720dafb5b77437be")
         (color-theme :checksum "047d6cb207fdef66b25343479ebe09a1ed3954b5")
         (origami\.el :checksum "b571187d68dbfbbc797ac0869c0b3650ad421d00")
         (yascroll :checksum "f7743df1cf6d8e55607141d1ea5f50b562582c51")
