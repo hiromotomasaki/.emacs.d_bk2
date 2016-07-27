@@ -1,5 +1,6 @@
 (setq el-get-lock-package-versions
-      '((yascroll :checksum "f7743df1cf6d8e55607141d1ea5f50b562582c51")
+      '((origami\.el :checksum "b571187d68dbfbbc797ac0869c0b3650ad421d00")
+        (yascroll :checksum "f7743df1cf6d8e55607141d1ea5f50b562582c51")
         (fic-mode :checksum "8182f5be875fdefc5bd7142ab45adea89ac20705")
         (popwin :checksum "95dea14c60019d6cccf9a3b33e0dec4e1f22c304")
         (init-loader :checksum "287da99eadfa3dd85492506db43d68324069b593")
