@@ -160,7 +160,7 @@
 ;; (setq inhibit-startup-screen nil)		;初期windowで*GNY Emacs*を表示する
 
 ;; スクロールバーの表示
-(set-scroll-bar-mode nil)		;非表示
+;; (set-scroll-bar-mode nil)		;非表示
 ;; (set-scroll-bar-mode t)			;表示
 
 ;; タイトルバーへの情報表示
